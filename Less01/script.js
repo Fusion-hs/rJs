@@ -37,7 +37,6 @@ const makeBusiness = (director, allModule = undefined, gang = undefined, course 
 Первое что изучим будет ${data.react[0]}. Он очень похож на HTML!
 Технологии которые мы изучим: 
 ${sumTech.join(' ')}`);
-
-}
+};
 
 makeBusiness(...['Артем', lesson, command, nameCourse]);
