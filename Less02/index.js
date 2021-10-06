@@ -2,7 +2,6 @@ class FeaturesItem extends React.Component {
 	constructor(props) {
 		super();
 		this.id = ++FeaturesItem.counter;
-		console.log(this.id);
 		this.textArray = ['Первое целевое преимущество', 'Второе целевое преимущество', 'Третье целевое преимущество', 'Четвертое целевое преимущество']
 	}
 	render() {
@@ -143,7 +142,7 @@ class Root extends React.Component {
 		</div>
 		);
 	}
-} 
+}
 
 ReactDOM.render(<Root/>, document.getElementById('root'));
 /*  <header>	
