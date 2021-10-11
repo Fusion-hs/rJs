@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ModalButton } from './ModalButton';
+import { ButtonCheckout } from './ButtonCheckout';
 
 const Overlay = styled.div`
     position:fixed;
@@ -79,7 +79,9 @@ export const ModalItem = ({openItem, setOpenItem}) => {
                     </ItemPrice>
                 </ModalTextContainer>
                 <ModalButtonContainer>
-                    <ModalButton />
+                    <ButtonCheckout>
+                        Добавить
+                    </ButtonCheckout>
                 </ModalButtonContainer>
             </Modal>
         </Overlay>
