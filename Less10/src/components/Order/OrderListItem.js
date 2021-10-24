@@ -42,9 +42,16 @@ const OrderToppings = styled.span`
 
 `
 
-export const OrderListItem = ({ order }) => {
+export const OrderListItem = ({ order, deleteItem, index, setOpenItem }) => {
     return (
-        <OrderItemStyled>
+        <OrderItemStyled
+            onClick = {
+                (event) => {
+                if (!event.target.closest('button')) {
+                    setOpenItem({...order, index})
+                    }
+                }
+            }>
             <ItemName>{order.name}</ItemName>
             {order.toppings && <OrderToppings>
                 {
@@ -54,9 +61,14 @@ export const OrderListItem = ({ order }) => {
                         .join (', ').toLowerCase()
                 }
                 </OrderToppings>}
+            {order.choices && <OrderToppings>
+                {
+                    order.choices
+                }
+                </OrderToppings>}
             <span>{order.count}</span>
             <ItemPrice>{formatCurrency(totalPriceItems(order))}</ItemPrice>
-            <TrashButton />
+            <TrashButton onClick = { () => { deleteItem(index) } } />
         </OrderItemStyled>
     );
 }
